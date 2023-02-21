@@ -2,7 +2,7 @@
 This is a QR generator app which takes the business form data and creates QR code.
 On scanning the QR code we get the data entered in the business form.
 Also it has three screens one the homescreen,second one is the form screen and the third one is the qrcode show screen.
-Also the download button when clicked downloads the QR code in a file path.And redirects to the homescreen.
+Also the download button when clicked downloads the QR code in a file path and message pops up stating:"Image saved in Gallery".And redirects to the homescreen.
 I have attached the snapshots of the same.
 
 To run this repo,you will have to follow these steps:
