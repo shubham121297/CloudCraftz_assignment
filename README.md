@@ -5,6 +5,14 @@ Also it has three screens one the homescreen,second one is the form screen and t
 Also the download button when clicked downloads the QR code in a file path.And redirects to the homescreen.
 I have attached the snapshots of the same.
 
+To run this repo,you will have to follow these steps:
+  1:install flutter and run "flutter create my_app" in terminal's ide.
+  2:replace the folders with the folders i have uploaded here.
+  3:run "flutter packages get"
+  4:run "flutter run --no-sound-null-safety"
+  5:you can run on emulator or web ,your choice.!
+  
+
 
 ![Screenshot 2023-02-21 174432](https://user-images.githubusercontent.com/71139171/220342788-a26f98f1-e628-4678-af9b-ab1acc24ca75.png)
 
