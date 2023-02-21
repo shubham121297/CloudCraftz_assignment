@@ -58,24 +58,9 @@ class _QRCodeScreenState extends State<QRCodeScreen> {
     String tempPath = tempDir.path;
     final ts = DateTime.now().millisecondsSinceEpoch.toString();
     String path = '$tempPath/$ts.png';
-
-    // Directory appDocDir = await getApplicationDocumentsDirectory();
-    // String appDocPath = appDocDir.path;
-    // String filePath = '${appDocDir.path}/file.txt';
-
-    // new File(filePath).readAsString().then((String contents) {
-    //   print(contents);
-    //});
     final picData =
         await painter.toImageData(2048, format: ImageByteFormat.png);
     await writeToFile(picData!, path);
-
-    // await Share.shareFiles(
-    //     [filePath],
-    //     mimeTypes: ["image/png"],
-    //     subject: 'My QR code',
-    //     text: 'Please scan me');
-    // print(path);
     try {
       print(path);
       final success = await GallerySaver.saveImage(path);
@@ -87,6 +72,7 @@ class _QRCodeScreenState extends State<QRCodeScreen> {
     } catch (e) {
       print('ErrorWhileSavingImage: $e');
     }
+    Navigator.of(context).pushNamedAndRemoveUntil('/', (Route<dynamic>route) => false);
   }
 
   @override
@@ -188,27 +174,6 @@ class _QRCodeScreenState extends State<QRCodeScreen> {
                     Expanded(
                       child: ElevatedButton(
                         onPressed: _downloadPNG,
-                        // final qrValidationResult = QrValidator.validate(
-                        //   data:
-                        //       "First Name : ${widget.cardDetails.firstName}, Last Name : ${widget.cardDetails.lastName}, Work Phone : ${widget.cardDetails.workPhone}, Work Email : ${widget.cardDetails.workEmail},Designation : ${widget.cardDetails.designation}, Company : ${widget.cardDetails.company}",
-                        //   version: QrVersions.auto,
-                        //   errorCorrectionLevel: QrErrorCorrectLevel.L,
-                        // );
-                        // final qrCode = qrValidationResult.qrCode;
-
-                        // final painter = QrPainter.withQr(
-                        //   qr: qrCode!,
-                        //   color: const Color(0xFF000000),
-                        //   gapless: true,
-                        //   embeddedImageStyle: null,
-                        //   embeddedImage: null,
-                        // );
-
-                        // Directory tempDir = await getTemporaryDirectory();
-                        // String tempPath = tempDir.path;
-                        // final ts = DateTime.now().millisecondsSinceEpoch.toString();
-                        // String path = '$tempPath/$ts.png';
-
                         child: Text(
                           'Download',
                           style: TextStyle(fontSize: 20),
